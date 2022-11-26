@@ -1,8 +1,5 @@
 on:
-  push:
-#     Sequence of patterns matched against refs/tags
-    tags:
-    - '*' # Tag events
+  workflow_dispatch:
 
 name: Upload Release Asset
 
@@ -32,7 +29,7 @@ jobs:
           Section: base
           Priority: optional
           Description: Docker Engine API for LuCI
-          Source: http://github.com/lisaac/luci-lib-docker
+          Source: http://github.com/mymine/luci-lib-docker
           EOF
           cat >/tmp/luci-lib-docker/CONTROL/postinst <<EOF
           #!/bin/sh
